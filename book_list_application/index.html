@@ -1,11 +1,79 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book List Application</title>
-</head>
-<body>
-    <script src="app.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>My Book List</title>
+  </head>
+  <body>
+    <div class="container mt-4 mx-auto">
+      <h1 class="text-6xl text-center">
+        <i class="fa fa-book-open text-blue-500"></i>
+
+        My<span class="text-blue-500"> Book</span> List
+      </h1>
+      <form id="book-form">
+        <div class="my-6">
+          <label for="title" class="text-2xl ml-2">Title :</label><br />
+          <input
+            id="title"
+            type="text"
+            class="w-full h-14 mt-3 px-4 py-2 border border-slate-400"
+          />
+        </div>
+        <div class="my-6">
+          <label for="author" class="text-2xl ml-2">Author :</label><br />
+          <input
+            id="author"
+            type="text"
+            class="w-full h-14 mt-3 px-4 py-2 border border-slate-400"
+          />
+        </div>
+        <div class="my-6">
+          <label for="isbn" class="text-2xl ml-2">ISBN# :</label><br />
+          <input
+            id="isbn"
+            type="text"
+            class="w-full h-14 mt-3 px-4 py-2 border border-slate-400"
+          />
+        </div>
+        <div>
+          <input
+            type="submit"
+            value="Add Book"
+            class="bg-blue-500 text-white w-full h-14 mt-3 text-2xl hover:bg-blue-600 hover:cursor-pointer"
+          />
+        </div>
+      </form>
+      <div class="mt-8 flex justify-between border border-gray-500 rounded-2xl bg-gray-100">
+        <input
+          type="text"
+          placeholder="Search by Title, Author, or ISBN..."
+          class="search focus:outline-none p-2 text-2xl w-full"
+        />
+        <i class="fa fa-search text-3xl m-2 text-gray-500"></i>
+      </div>
+      <table class="min-w-full border border-gray-300 mt-8 mr-4 mb-24 ">
+        <thead class="bg-gray-300 h-12">
+          <tr>
+            <th class="text-xl">Title</th>
+            <th class="text-xl">Author</th>
+            <th class="text-xl">ISBN#</th>
+            <th class="text-xl">Delete</th>
+            <th class="text-xl">Update</th>
+          </tr>
+        </thead>
+        <tbody id="book-list" class="h-12 text-center "></tbody>
+      </table>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
